@@ -87,10 +87,17 @@ def resolve_ip_owner(ip: str) -> str:
 
 def identify_service_name(hostname: str, owner: str) -> str:
     """Extracts a clean website/service name (e.g., YouTube, VS Code, GitHub)."""
-    combined = f"{hostname} {owner}".lower()
+    host_lower = hostname.lower()
+    owner_lower = owner.lower()
+
     for keyword, friendly_name in SERVICE_KEYWORDS.items():
-        if keyword in combined:
+        if keyword in host_lower:
             return friendly_name
+
+    for keyword, friendly_name in SERVICE_KEYWORDS.items():
+        if keyword in owner_lower:
+            return friendly_name
+
     if owner and owner != "Unlisted Network":
         return owner
     return "General Web Service"
