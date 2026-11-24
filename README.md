@@ -87,7 +87,7 @@ sudo ./venv/bin/python main.py
 This project is under active development. Planned improvements include:
 
 - [ ] **UI Customization:** Theme switcher (Dark/Light mode) and configurable scan intervals directly in the dashboard. (Not sure about this yet!)
-- [ ] **Automated Testing:** Unit tests with `pytest` to verify risk classification logic, port rules, and cross-platform OS checks.
+- [x] **Automated Testing:** Unit tests with `pytest` to verify risk classification logic, port rules, and cross-platform OS checks.
 - [ ] **Active Intrusion Protection:** Option to block suspicious IP addresses directly via `ufw` (Linux) or Windows Defender Firewall from the UI, plus automated blocking rules for repeated failed logins.
 - [ ] **Alert History & Export:** Automatic logging of `WARNING` and `DANGER` events to a local CSV/JSON file for post-incident review.
 - [ ] **Listening Ports Monitor:** Dedicated view for local `LISTEN` ports to spot unintended open services on the host machine.
